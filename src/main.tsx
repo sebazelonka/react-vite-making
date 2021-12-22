@@ -1,12 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import "./index.css";
+import { createGlobalStyle } from "styled-components";
 import { App } from "./routes/home";
 import { About } from "./routes/about";
 
+const Global = createGlobalStyle`
+  body {
+    padding: 10px;
+    font-family: sans-serif
+  }
+`;
+
 ReactDOM.render(
   <BrowserRouter>
+    <Global />
     <React.StrictMode>
       <nav
         style={{
